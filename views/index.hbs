@@ -1,86 +1,91 @@
 <header>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bottom border-bottom-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-bottom-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
         <img src="../images/logo.gif" alt="score deck logo" height="50px">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">My Score Deck</a>
-        </li>
-        {{!-- <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li> --}}
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            My Courses
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Course A</a></li>
-            <li><a class="dropdown-item" href="#">Course B</a></li>
-            {{!-- <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
-          </ul>
-        </li>
-        {{!-- <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li> --}}
-      </ul>
-      {{!-- <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search for a Course" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> --}}
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">My Score Deck</a>
+          </li>
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> --}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              My Courses
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Course A</a></li>
+              <li><a class="dropdown-item" href="#">Course B</a></li>
+              {{!-- <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li> --}}
+            </ul>
+          </li>
+          {{!-- <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li> --}}
+        </ul>
+        {{!-- <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search for a Course" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> --}}
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 </header>
 
-<section class="landing-section">
-    <div class="container text-start px-4 landing-div">
-        <div class="row gx-5 m-3 landing-row">
-            <div class="col">
-                <img src="../images/golfclub.png" alt="a golf ball on a green" width="400px" class="p-3">
-            </div>
-            <div class="col">
-                <p class="p-3"><strong>Track your score.</strong> <br> Know what you hit on every hole, every time.</p>
-            </div>
-        </div>
+<div class="text-start landing-div">
+  <div class="landing-row">
+    <div class="col">
+      <img src="../images/golfclub.png" alt="a golf ball on a green" width="400px" class="landing-img">
     </div>
-
-    <hr>
-
-    <div class="container text-end px-4 landing-div">
-        <div class="row g-5 m-3 landing-row">
-            <div class="col">
-                <p class="p-3"><strong>Compare your stats.</strong> <br> Always know your lowest, highest, <br> and most common score on every hole.</p>
-            </div>
-            <div class="col">
-                <img src="../images/golfball.png" alt="a golf ball on a green" width="400px" class="p-3">
-            </div>
-        </div>
+    <div class="col p-col">
+      <p class=""><strong>Track your score.</strong> <br> Know what you hit on every hole,<br> every time.</p>
     </div>
+  </div>
+</div>
 
 <hr>
 
-    <div class="container text-start px-4 landing-div">
-        <div class="row g-5 m-3 landing-row">
-            <div class="col">
-                <img src="../images/golfgreen.png" alt="a golf ball on a green" width="400px" class="p-3">
-            </div>
-            <div class="col">
-                <p class="p-3 login-register-landing">
-                    <a href="/auth/login" class="text-success">Login</a>
-                    or
-                    <a href="/auth/register" class="text-success">Register</a>
-                    <br>
-                    to start improving your game.
-                    </p>
-            </div>
-        </div>
+<div class="text-end landing-div">
+  <div class="landing-row landing-row-flip">
+    <div class="col p-col p-flip">
+      <p class=""><strong>Compare your stats.</strong> <br> Always know your lowest, highest, <br> and most common score
+        on every hole.</p>
     </div>
+    <div class="col">
+      <img src="../images/golfball.png" alt="a golf ball on a green" width="400px" class="landing-img">
+    </div>
+  </div>
+</div>
 
-</section>
+<hr>
+
+<div class="text-start landing-div">
+  <div class="landing-row">
+    <div class="col">
+      <img src="../images/golfgreen.png" alt="a golf ball on a green" width="400px" class="landing-img">
+    </div>
+    <div class="col p-col">
+      <p class=" login-register-landing">
+        <a href="/auth/login" class="text-success">Login</a>
+        or
+        <a href="/auth/register" class="text-success">Register</a>
+        <br>
+        to start improving your game.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="col">
+
+</div>

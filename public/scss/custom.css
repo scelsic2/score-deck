@@ -12033,25 +12033,31 @@ textarea.form-control-lg {
   }
 }/*# sourceMappingURL=custom.css.map */
 
-
-.landing-section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .landing-div {
-  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 40px;
 }
 
 .landing-row {
+  display: flex;
   align-items: center;
-  /* margin: 20px; */
+  padding: 40px;
 }
 
 hr {
-  width: 80%;
+  width: 720px;
   margin: auto;
+}
+
+.p-col {
+  width: 300px;
+  margin-left: 20px
+}
+
+.p-flip {
+  margin-right: 20px;
 }
 
 .login-register-landing > a {
@@ -12066,4 +12072,28 @@ hr {
 
 .submit-btn {
   margin: auto;
+}
+
+@media screen and (max-width: 415px)  {
+  .landing-div {
+    padding: 30px 0px 0px 0px;
+  }
+  .landing-row {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+  .landing-row-flip {
+    flex-direction: column-reverse;
+  }
+  .landing-img {
+    width: 90vw
+  }
+  .p-col {
+    width: 90vw;
+    margin-top: 13px;
+  }
+  hr {
+    width:90vw;
+  }
 }
