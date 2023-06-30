@@ -1,31 +1,44 @@
-<header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bottom border-bottom-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="../images/logo.gif" alt="score deck logo" height="50px">
-      </a>
+<div class="container-fluid px-0">
+  <div class="row">
+    <div class="col-xl">
+      <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bottom border-bottom-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/auth/login">
+              <img src="../images/logo.gif" alt="score deck logo" height="50px">
+            </a>
+          </div>
+        </nav>
+      </header>
     </div>
-  </nav>
-</header>
+  </div>
 
-<section class="login-register-section text-center">
-
-  <form id="register" class="login-register-form" method="POST" action="/auth/register">
-
-    <div class="mb-1 m-5">
+  <div class="row mb-1 m-5">
+    <div class="col-xl text-center">
       <h2>Register</h2>
     </div>
+  </div>
 
-    <div class="mb-1 m-5">
-      {{!-- <label for="formGroupExampleInput" class="form-label">Example label</label> --}}
-      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email address">
+  <div class="row">
+    <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-10 offset-md-1">
+      <form id="register" class="login-register-form" method="POST" action="/auth/register">
+        <div class="mb-1 m-5 row">
+          <input type="email" name="email" class="form-control" id="formGroupExampleInput" placeholder="Email address">
+        </div>
+        <div class="mb-5 m-5 row">
+          <input type="password" name="password" class="form-control" id="formGroupExampleInput2" placeholder="Password">
+        </div>
+
+        <div class="mb-1 m-1 text-center">
+          <button type="submit" class="btn btn-success submit-btn">Submit</button>
+        </div>
+      </form>
     </div>
-    <div class="mb-5 m-5">
-      {{!-- <label for="formGroupExampleInput2" class="form-label">Another label</label> --}}
-      <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Password">
+  </div>
+
+  <div class="row">
+    <div class="col-xl text-center">
+      <p class="error">{{error}}</p>
     </div>
-    <button type="button" class="btn btn-success submit-btn">Submit</button>
-
-  </form>
-
-</section>
+  </div>
+</div>

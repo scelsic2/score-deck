@@ -1,0 +1,292 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-bottom-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="/../images/logo.gif" alt="score deck logo" height="50px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">My Score Deck</a>
+          </li>
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> --}}
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/auth/user/add_a_scorecard">Add a Score Card</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              My Courses
+            </a>
+            <ul class="dropdown-menu">
+              {{#each courses}}
+              <li><a class="dropdown-item" value={{this.dataValues.course_name}}
+                  href="/auth/user/single_course/{{this.dataValues.course_name}}">{{this.dataValues.course_name}}</a>
+              </li>
+              {{/each}}
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/auth/user/{{id}}/add_a_course/">Add a Course</a></li>
+            </ul>
+          </li>
+          {{!-- <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li> --}}
+        </ul>
+        <div class="d-flex no-dot">
+          {{!-- <li class="nav-item"> --}}
+            {{#if isLoggedIn}}
+            <a class="nav-link active" aria-current="page" href="/auth/logout">Logout</a>
+            {{else}}
+            <a class="nav-link active" aria-current="page" href="/auth.login">Login</a>
+            {{/if}}
+            {{!--
+          </li> --}}
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+<div class="container">
+
+  <form>
+
+    <div class="row mt-5">
+      <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3 d-flex justify-content-center">
+
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+
+          <option selected>Course</option>
+
+          {{#if courses}}z
+          {{#each courses}}
+          <option value="{{this.dataValues.course_name}}">{{this.dataValues.course_name}}</option>
+          {{/each}}
+          {{else}}
+          <option>Add a Course</option>
+          {{/if}}
+
+        </select>
+
+      </div>
+
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-xl-2 offset-xl-5 col-lg-2 offset-lg-5 col-md-2 offset-md-5 d-flex justify-content-center">
+        <input type="date" class="date form-control">
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="form-outline mt-5">
+
+        <div class="row d-flex justify-content-center align-items-end">
+
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score1">Hole 1</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2 ">
+            <input type="number" id="score1" class="form-control" />
+          </div>
+
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score2">Hole 2</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score2" class="form-control" />
+          </div>
+
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score3">Hole 3</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score3" class="form-control" />
+          </div>
+
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score4">Hole 4</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score4" class="form-control" />
+          </div>
+
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score5">Hole 5</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score5" class="form-control" />
+          </div>
+
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score6">Hole 6</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score6" class="form-control" />
+          </div>
+
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score7">Hole 7</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score7" class="form-control" />
+          </div>
+
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score8">Hole 8</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score8" class="form-control" />
+          </div>
+
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score9">Hole 9</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score9" class="form-control" />
+          </div>
+
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score10">Hole 10</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score10" class="form-control" />
+          </div>
+
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score11">Hole 11</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2 ">
+            <input type="number" id="score11" class="form-control" />
+          </div>
+
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score12">Hole 12</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score12" class="form-control" />
+          </div>
+
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score13">Hole 13</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score13" class="form-control" />
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score141">Hole 14</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score14" class="form-control" />
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score15">Hole 15</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score15" class="form-control" />
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score16">Hole 16</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score16" class="form-control" />
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score17">Hole 17</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score17" class="form-control" />
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-end">
+          <div class="col-xl-1 col-lg-2 col-md-2 mb-2">
+            <label class="form-label" for="score18">Hole 18</label>
+          </div>
+          <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
+            <input type="number" id="score18" class="form-control" />
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="mt-3 mb-5 text-center">
+      <button type="submit" class="btn btn-success submit-btn">Submit</button>
+    </div>
+
+  </form>
+
+</div>

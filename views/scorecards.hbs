@@ -1,0 +1,75 @@
+<header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-bottom-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="/../images/logo.gif" alt="score deck logo" height="50px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">My Score Deck</a>
+          </li>
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li> --}}
+          
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/auth/user/add_a_scorecard">Add a Score Card</a>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              My Courses
+            </a>
+            <ul class="dropdown-menu">
+              {{#each courses}}
+                <li><a class="dropdown-item" value={{this.dataValues.course_name}} href="/auth/user/single_course/{{this.dataValues.course_name}}">{{this.dataValues.course_name}}</a></li>
+              {{/each}}
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/auth/user/{{id}}/add_a_course/">Add a Course</a></li>
+            </ul>
+          </li>
+          {{!-- <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li> --}}
+        </ul>
+        <div class="d-flex no-dot">
+          {{!-- <li class="nav-item"> --}}
+            {{#if isLoggedIn}}
+            <a class="nav-link active" aria-current="page" href="/auth/logout">Logout</a>
+            {{else}}
+            <a class="nav-link active" aria-current="page" href="/auth.login">Login</a>
+            {{/if}}
+          {{!-- </li> --}}
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+{{!-- {{#each courses}}
+
+  <div class="container">
+    
+    <div class="row d-flex align-items-center">
+      <div class="col">
+        <h2>{{this.dataValues.course_name}}</h2>  
+      </div>
+      <div class="col pt-3">
+        <p>{{this.dataValues.city}}, {{this.dataValues.state}}</p>
+      </div>
+    </div>
+
+
+
+  </div>
+
+{{/each}} --}}
+
+{{error}}

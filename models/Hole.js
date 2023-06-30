@@ -1,28 +1,24 @@
 const { Model, DataTypes } = require('sequelize');
 const db = require('../config/connection');
 
-class Par extends Model {}
+class Hole extends Model {}
 
-Par.init({
-  par: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
-  hole_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
-  tee_id: {
+Hole.init({
+  hole_number: {
     type: DataTypes.INTEGER,
     allowNull: false
   },
   course_id: {
     type: DataTypes.INTEGER,
     allowNull: false
+  },
+  tee_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false
   }
 },{
   sequelize: db,
-  modelName: 'par'
+  modelName: 'hole'
 })
 
-module.exports = Par
+module.exports = Hole

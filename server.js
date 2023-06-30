@@ -4,6 +4,9 @@ const session = require('express-session')
 const { engine } = require('express-handlebars');
 const PORT = process.env.PORT || 3000;
 const db = require('./config/connection');
+const sequelize = require('./config/connection');
+const { Sequelize } = require('sequelize');
+const SequelizeStore = require("connect-session-sequelize")(session.Store)
 
 const api_routes = require('./controllers/api_routes')
 const auth_routes = require('./controllers/auth_routes')
@@ -18,7 +21,9 @@ app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    // cookie: {secure: process.env.PORT ? true : false }, 
+    store: new SequelizeStore({
+      db: sequelize
+    })
   }))
 
 app.engine('hbs', engine({
@@ -35,6 +40,6 @@ app.get('/', (req, res) => {
   res.render('index', isLoggedIn);
 });
 
-db.once('open', () => {
-app.listen(PORT, () => console.log('server started on port %s', PORT))
+sequelize.sync().then(() => {
+  app.listen(PORT, () => console.log('Server started on port %s', PORT))
 });

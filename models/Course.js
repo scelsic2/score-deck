@@ -1,43 +1,28 @@
-const { Schema, model } = require('mongoose');
+const { Model, DataTypes } = require('sequelize');
+const db = require('../config/connection');
 
-const courseSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
+class Course extends Model {}
+
+Course.init({
+  course_name: {
+    type: DataTypes.STRING,
+    allowNull: false
   },
   city: {
-    type: String,
-    required: true,
+    type: DataTypes.STRING,
+    allowNull: false
   },
   state: {
-    type: String,
-    required: true,
+    type: DataTypes.STRING,
+    allowNull: false
   },
-  tees: {
-    type: String,
-    required: true,
-  },
-  gender: {
-  type: String,
-  required: true,
-  },
-
-  par: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'par'
-    }
-  ],
-  scores: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'score'
-    }
-  ]
-
-});
-
-
-const Course = model('course', courseSchema)
+  user_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+}
+},{
+  sequelize: db,
+  modelName: 'course'
+})
 
 module.exports = Course

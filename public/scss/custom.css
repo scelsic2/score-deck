@@ -12046,7 +12046,7 @@ textarea.form-control-lg {
   padding: 40px;
 }
 
-hr {
+.landing-divider {
   width: 720px;
   margin: auto;
 }
@@ -12074,6 +12074,20 @@ hr {
   margin: auto;
 }
 
+.error {
+  margin-top: 20px;
+}
+
+.need-register {
+  margin-top: 20px;
+}
+
+.need-register > a {
+  text-decoration: none;
+  color: rgb(65, 132, 88);
+  font-weight: bold;
+}
+
 @media screen and (max-width: 415px)  {
   .landing-div {
     padding: 30px 0px 0px 0px;
@@ -12093,7 +12107,8 @@ hr {
     width: 90vw;
     margin-top: 13px;
   }
-  hr {
+  .landing-divider {
     width:90vw;
   }
 }
+

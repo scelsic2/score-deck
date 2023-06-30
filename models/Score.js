@@ -1,14 +1,40 @@
-const { Schema, model } = require('mongoose');
+const { Model, DataTypes } = require('sequelize');
+const db = require('../config/connection');
 
-const scoreSchema = new Schema({
-  
-  hole: {
-    type: Number,
-    required: false,
+class Score extends Model {}
+
+Score.init({
+  score: {
+    type: DataTypes.INTEGER,
+    allowNull: false
   },
-  
-}, { timestamps: true });
+  score_date: {
+    type: DataTypes.DATE,
+    allowNull: true
+  },
+  user_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  par_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  hole_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  tee_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  course_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  }
+},{
+  sequelize: db,
+  modelName: 'score'
+})
 
-const Score = model('score', scoreSchema);
-
-module.exports = Score;
+module.exports = Score
