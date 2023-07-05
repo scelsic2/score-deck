@@ -38,8 +38,8 @@ router.post('/register', async (req, res) => {
         isLoggedIn = false
     }
 
-    console.log('user_data from post register route is:')
-    console.log(user_data)
+    console.log('user_data.email from post register route is:')
+    console.log(user_data.email)
 
     res.redirect(`/auth/user/${user.id}/scorecard`)
     
@@ -93,7 +93,7 @@ router.post('/login', async (req, res) => {
   
 })
 
-// GET SCORECARD
+// GET SCORECARD Dashboard
 router.get('/user/:id/scorecard', async (req, res) => {
 
     try {
@@ -460,8 +460,26 @@ router.get('/user/single_course/:id', async (req, res) => {
         }
     })
 
+    const par = await Par.findOne({
+      where: {
+        course_id: course.dataValues.id
+      }
+    })
+
+    const scores = await Score.findAll({
+      where: {
+        course_id: course.dataValues.id
+      }
+    })
+
     console.log('-----course from get single course-----')
     console.log(course)
+
+    console.log('-----par from get single course-----')
+    console.log(par)
+
+    console.log('-----scores from get single course-----')
+    console.log(scores)
 
     if (!userId) return res.redirect('/auth/login')
 
@@ -478,6 +496,8 @@ router.get('/user/single_course/:id', async (req, res) => {
       id: userId,
       course: course,
       courses: courses,
+      par: par,
+      scores: scores,
       isLoggedIn: isLoggedIn
     })
   } catch (err) {
@@ -486,7 +506,7 @@ router.get('/user/single_course/:id', async (req, res) => {
 
 })
 
-// GET Add a Scorecard
+// GET ADD A SCORECARD
 router.get('/user/add_a_scorecard', async (req, res) => {
   
   try {
@@ -519,6 +539,73 @@ router.get('/user/add_a_scorecard', async (req, res) => {
   } catch (err) {
     console.error(err)
   }
+})
+
+// POST ADD A SCORECARD
+router.post('/user/add_a_scorecard', async (req, res) => {
+  
+  try{
+    const userId = req.session.user_id;
+    console.log('-----userId from post add a scorecard-----')
+    console.log(userId)
+    const user = await User.findByPk(userId)
+  
+    if(user) {
+      isLoggedIn = true  
+    } else {
+      isLoggedIn = false
+    }
+    const input = req.body
+    console.log('-----input from post add a scorecard-----')
+    console.log(input)
+  
+    const course = await Course.findOne({
+      where: { 
+        course_name: input.course_name
+      },
+    })
+
+    const tee = await Tee.findOne({
+      where: {
+        course_id: course.dataValues.id
+      }
+    })
+
+    let score
+    let hole
+
+    for(t = 1; t < 19; t++) {
+      // hole = await Hole.create({
+      //   hole_number: t,
+      //   course_id: course.dataValues.id,
+      //   tee_id: tee.dataValues.id,
+      //   teeId: tee.dataValues.id,
+      // })
+      
+      score = await Score.create({
+          score: input['score' + t],
+          score_date: input.score_date,
+          user_id: userId,
+          hole_id: t,
+          par_id: t,
+          tee_id: tee.dataValues.id,
+          course_id: course.dataValues.id,
+          userId: userId,
+          teeId: tee.dataValues.id
+      })
+      
+    }
+
+    console.log('-----score added-----');
+    console.log(score)
+
+    res.redirect(`/auth/user/${userId}/scorecard`)
+
+    console.log('++++++++++my scorecard has been added++++++++++')
+
+  } catch (err) {
+    res.status(500).send({ error: err })
+}
 })
 
 router.get('/logout', (req, res)=> {

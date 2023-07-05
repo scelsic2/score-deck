@@ -56,14 +56,18 @@
 
   <div class="container">
     
-    <div class="row d-flex align-items-center">
+    <div class="row align-items-baseline">
       <div class="col">
         <h2>{{course.dataValues.course_name}}</h2>  
       </div>
-      <div class="col pt-3">
+      <div class="col">
         <p>{{course.dataValues.city}}, {{course.dataValues.state}}</p>
       </div>
     </div>
 
+    {{#each scores}}
+      <p>{{this.dataValues.score}}</p>
+    {{/each}}
   </div>
+
 

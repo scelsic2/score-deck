@@ -60,16 +60,16 @@
 
 <div class="container">
 
-  <form>
+  <form action="/auth/user/add_a_scorecard" method="POST">
 
     <div class="row mt-5">
       <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3 d-flex justify-content-center">
 
-        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+        <select class="form-select form-select-lg mb-3" name="course_name" aria-label=".form-select-lg example">
 
           <option selected>Course</option>
 
-          {{#if courses}}z
+          {{#if courses}}
           {{#each courses}}
           <option value="{{this.dataValues.course_name}}">{{this.dataValues.course_name}}</option>
           {{/each}}
@@ -85,7 +85,7 @@
 
     <div class="row mt-2">
       <div class="col-xl-2 offset-xl-5 col-lg-2 offset-lg-5 col-md-2 offset-md-5 d-flex justify-content-center">
-        <input type="date" class="date form-control">
+        <input type="date" name="score_date" class="date form-control">
       </div>
     </div>
 
@@ -99,7 +99,7 @@
             <label class="form-label" for="score1">Hole 1</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2 ">
-            <input type="number" id="score1" class="form-control" />
+            <input type="number" id="score1" name="score1" class="form-control" />
           </div>
 
         </div>
@@ -110,7 +110,7 @@
             <label class="form-label" for="score2">Hole 2</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score2" class="form-control" />
+            <input type="number" id="score2" name="score2" class="form-control" />
           </div>
 
         </div>
@@ -121,7 +121,7 @@
             <label class="form-label" for="score3">Hole 3</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score3" class="form-control" />
+            <input type="number" id="score3" name="score3" class="form-control" />
           </div>
 
         </div>
@@ -132,7 +132,7 @@
             <label class="form-label" for="score4">Hole 4</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score4" class="form-control" />
+            <input type="number" id="score4" name="score4" class="form-control" />
           </div>
 
         </div>
@@ -143,7 +143,7 @@
             <label class="form-label" for="score5">Hole 5</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score5" class="form-control" />
+            <input type="number" id="score5" name="score5" class="form-control" />
           </div>
 
         </div>
@@ -154,7 +154,7 @@
             <label class="form-label" for="score6">Hole 6</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score6" class="form-control" />
+            <input type="number" id="score6" name="score6" class="form-control" />
           </div>
 
         </div>
@@ -165,7 +165,7 @@
             <label class="form-label" for="score7">Hole 7</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score7" class="form-control" />
+            <input type="number" id="score7" name="score7" class="form-control" />
           </div>
 
         </div>
@@ -176,7 +176,7 @@
             <label class="form-label" for="score8">Hole 8</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score8" class="form-control" />
+            <input type="number" id="score8" name="score8" class="form-control" />
           </div>
 
         </div>
@@ -187,7 +187,7 @@
             <label class="form-label" for="score9">Hole 9</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score9" class="form-control" />
+            <input type="number" id="score9" name="score9" class="form-control" />
           </div>
 
         </div>
@@ -198,7 +198,7 @@
             <label class="form-label" for="score10">Hole 10</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score10" class="form-control" />
+            <input type="number" id="score10" name="score10" class="form-control" />
           </div>
 
         </div>
@@ -209,7 +209,7 @@
             <label class="form-label" for="score11">Hole 11</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2 ">
-            <input type="number" id="score11" class="form-control" />
+            <input type="number" id="score11" name="score11" class="form-control" />
           </div>
 
         </div>
@@ -220,7 +220,7 @@
             <label class="form-label" for="score12">Hole 12</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score12" class="form-control" />
+            <input type="number" id="score12" name="score12" class="form-control" />
           </div>
 
         </div>
@@ -230,7 +230,7 @@
             <label class="form-label" for="score13">Hole 13</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score13" class="form-control" />
+            <input type="number" id="score13" name="score13" class="form-control" />
           </div>
         </div>
 
@@ -239,7 +239,7 @@
             <label class="form-label" for="score141">Hole 14</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score14" class="form-control" />
+            <input type="number" id="score14" name="score14" class="form-control" />
           </div>
         </div>
 
@@ -248,7 +248,7 @@
             <label class="form-label" for="score15">Hole 15</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score15" class="form-control" />
+            <input type="number" id="score15" name="score15" class="form-control" />
           </div>
         </div>
 
@@ -257,7 +257,7 @@
             <label class="form-label" for="score16">Hole 16</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score16" class="form-control" />
+            <input type="number" id="score16" name="score16" class="form-control" />
           </div>
         </div>
 
@@ -266,7 +266,7 @@
             <label class="form-label" for="score17">Hole 17</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score17" class="form-control" />
+            <input type="number" id="score17" name="score17" class="form-control" />
           </div>
         </div>
 
@@ -275,7 +275,7 @@
             <label class="form-label" for="score18">Hole 18</label>
           </div>
           <div class="col-xl-1  col-lg-1  col-md-1 mb-2">
-            <input type="number" id="score18" class="form-control" />
+            <input type="number" id="score18" name="score18" class="form-control" />
           </div>
         </div>
 
